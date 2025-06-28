@@ -1,4 +1,4 @@
-# My Executive Assistant App Documentation-- By Israel Olasehinde with Kilocode.ai
+# My Executive Assistant App Documentation
 
 This is a full-stack Task Management App with a strong focus on the backend. It features a **Node.js + Express.js** REST API that powers a React + Tailwind frontend. The backend handles task operations including creation, editing, deletion, and retrieving.
 
@@ -91,4 +91,3 @@ curl -X POST http://localhost:3000/api/tasks \
 ## Technologies Used
 - Backend: Node.js, Express, CORS
 - Frontend: React, Vite, Tailwind CSS, Axios
-
