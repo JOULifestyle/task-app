@@ -61,7 +61,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Updated Task\",\n  \"description\": \"This task has been updated\",\n  \"completed\": true\n}"
+          "raw": "{\n  \"title\": \"Updated Task\",\n  \"description\": \"This task has been updated\", n \"dueDate\": \"yyyy--mm-dd\",\n  \"completed\": true\n}"
         },
         "url": {
           "raw": "http://localhost:3000/api/tasks/1",

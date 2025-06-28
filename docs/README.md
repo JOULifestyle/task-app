@@ -1,4 +1,7 @@
-# Task API App Documentation
+# My Executive Assistant App Documentation
+
+This is a full-stack Task Management App with a strong focus on the backend. It features a **Node.js + Express.js** REST API that powers a React + Tailwind frontend. The backend handles task operations including creation, editing, deletion, and retrieving.
+
 
 ## Project Structure
 
@@ -11,40 +14,25 @@ task-api-app/
 │   │   │   └── taskRoutes.js # Task CRUD routes
 │   │   ├── controllers/      # Business logic
 │   │   │   └── taskController.js
-│   │   ├── models/           # Data structures
-│   │   │   └── taskModel.js
 │   │   ├── middleware/       # Error handling, CORS
 │   │   │   ├── errorMiddleware.js
 │   │   │   └── corsMiddleware.js
-│   │   ├── config/           # Config files
-│   │   │   └── db.js         # Database config (SQLite/Mongo)
-│   │   └── utils/            # Helper functions
-│   │       └── validation.js
-│   ├── .env                  # Environment variables
 │   ├── package.json          # Backend dependencies
 │   └── postman_collection.json # API testing collection
 │
 ├── frontend/                 # React frontend
 │   ├── public/               # Static assets
 │   ├── src/                  # React source code
-│   │   ├── assets/           # Images, icons
-│   │   ├── components/       # Reusable UI components
 │   │   ├── pages/            # Page components
 │   │   │   ├── TaskList.js
-│   │   │   ├── TaskDetail.js
 │   │   │   └── TaskForm.js
-│   │   ├── services/         # Axios API calls
-│   │   │   └── taskService.js
-│   │   ├── styles/           # Tailwind config
-│   │   │   └── tailwind.config.js
-│   │   ├── types/            # TypeScript interfaces
-│   │   │   └── task.d.ts
+│   │   ├── main.jsx          
 │   │   └── App.jsx           # Main app component
 │   ├── vite.config.ts        # Vite config
-│   └── package.json          # Frontend dependencies
+│   |── package.json          # Frontend dependencies
+|   |── tailwind.config.js      # Tailwind config
 │
 ├── docs/                     # Documentation
-│   ├── postman_collection.json
 │   └── README.md             # Setup and usage instructions
 │
 └── .gitignore
@@ -69,18 +57,18 @@ task-api-app/
 ### Using Postman
 1. Import `postman_collection.json` into Postman
 2. Use the following requests:
-   - **GET /tasks**: Fetch all tasks
-   - **GET /tasks/:id**: Fetch a specific task
-   - **POST /tasks**: Create a new task (Body: JSON with `title` and `description`)
-   - **PUT /tasks/:id**: Update a task (Body: JSON with updated fields)
-   - **DELETE /tasks/:id**: Delete a task
+   - **GET api/tasks**: Fetch all tasks
+   - **GET api/tasks/:id**: Fetch a specific task
+   - **POST api/tasks**: Create a new task (Body: JSON with `title` and `description`)
+   - **PUT api/tasks/:id**: Update a task (Body: JSON with updated fields)
+   - **DELETE api/tasks/:id**: Delete a task
 
 ### Using cURL
 Example to create a task:
 ```bash
-curl -X POST http://localhost:3000/tasks \
+curl -X POST http://localhost:3000/api/tasks \
   -H "Content-Type: application/json" \
-  -d '{"title": "Sample Task", "description": "This is a sample task"}'
+  -d '{"title": "Sample Task", "description": "This is a sample task", "dueDate": "yyyy--mm-dd",  "completed": "false"}'
 ```
 
 ### Using Insomnia
@@ -88,5 +76,5 @@ curl -X POST http://localhost:3000/tasks \
 2. Run requests as described above
 
 ## Technologies Used
-- Backend: Node.js, Express, SQLite/MongoDB, CORS
+- Backend: Node.js, Express, CORS
 - Frontend: React, Vite, Tailwind CSS, Axios
